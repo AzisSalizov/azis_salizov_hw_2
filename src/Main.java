@@ -1,10 +1,12 @@
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println(permission(15, -20));
-        System.out.println(permission(45, 30));
-        System.out.println(permission(25, 24));
-        System.out.println(permission(40, 30));
-        System.out.println(permission(20, 36));
+        System.out.println(permission(generateRandomAge(), 10));
+        System.out.println(permission(generateRandomAge(), 20));
+        System.out.println(permission(generateRandomAge(), -20));
+        System.out.println(permission(generateRandomAge(), 34));
+        System.out.println(permission(generateRandomAge(), 25));
     }
 
     public static String permission(int age, int temperature) {
@@ -17,5 +19,10 @@ public class Main {
         } else {
             return "Оставайтесь дома";
         }
+    }
+
+    public static int generateRandomAge() {
+        Random random = new Random();
+        return random.nextInt(100);
     }
 }
